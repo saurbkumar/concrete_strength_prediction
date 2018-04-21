@@ -33,7 +33,7 @@ plt.title("Correlation heatmap for Patient features")
 temp = sns.heatmap(correlations, cbar = True,  square = True, annot=True, 
             fmt= '.2f',annot_kws={'size': 12}, cmap= 'coolwarm') 
 plt.show()
-
+# http://scikit-learn.org/stable/auto_examples/linear_model/plot_ols.html#sphx-glr-auto-examples-linear-model-plot-ols-py
 regr = linear_model.LinearRegression()
 
 

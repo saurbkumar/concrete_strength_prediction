@@ -2,6 +2,9 @@ import pandas
 import seaborn as sns
 import matplotlib.pyplot as plt
 from sklearn import linear_model
+from sklearn.neural_network import MLPRegressor
+from sklearn.model_selection import train_test_split
+from sklearn.metrics import mean_squared_error
 data = pandas.read_excel("data/Concrete_Data.xls")
 
 # Input Variable
@@ -36,4 +39,9 @@ plt.show()
 # http://scikit-learn.org/stable/auto_examples/linear_model/plot_ols.html#sphx-glr-auto-examples-linear-model-plot-ols-py
 regr = linear_model.LinearRegression()
 
+ml_regr = MLPRegressor()
+X_train, X_test, y_train, y_test = train_test_split(input_var.get_values(), output_var['Concrete compressive strength(MPa, megapascals) '].get_values(), test_size=0.40, random_state=42)
 
+ml_regr.fit(X_train,y_train)
+y_predt = ml_regr.predict(X_test)
+mean_squared_error()

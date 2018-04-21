@@ -43,5 +43,15 @@ ml_regr = MLPRegressor()
 X_train, X_test, y_train, y_test = train_test_split(input_var.get_values(), output_var['Concrete compressive strength(MPa, megapascals) '].get_values(), test_size=0.40, random_state=42)
 
 ml_regr.fit(X_train,y_train)
-y_predt = ml_regr.predict(X_test)
-mean_squared_error()
+y_pred = ml_regr.predict(X_test)
+error = mean_squared_error(y_test,y_pred)
+print(error)
+
+# Plot outputs
+plt.scatter(X_test[:,0], y_test,  color='black')
+plt.plot(X_test, y_pred, color='blue', linewidth=3)
+
+plt.xticks(())
+plt.yticks(())
+
+plt.show()

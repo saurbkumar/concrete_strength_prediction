@@ -46,7 +46,6 @@ ml_regr.fit(X_train,y_train)
 y_pred = ml_regr.predict(X_test)
 error = mean_squared_error(y_test,y_pred)
 print(error)
-
 # Plot outputs
 plt.scatter(X_test[:,0], y_test,  color='black')
 #plt.plot(X_test, y_pred, color='blue', linewidth=3)
